@@ -1,0 +1,501 @@
+/* Real-Time Crowd Dashboard Styles */
+
+.crowd-dashboard {
+  padding: 24px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+.crowd-dashboard.error-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fee;
+  color: #c33;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.error-banner {
+  background: #fee;
+  color: #c33;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  background: white;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #2c3e50;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Critical Alerts Section */
+.critical-alerts {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  border-left: 4px solid #e74c3c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alerts-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.alert-icon {
+  color: #e74c3c;
+  animation: pulse 2s infinite;
+}
+
+.alerts-header h3 {
+  margin: 0;
+  color: #c0392b;
+  font-size: 18px;
+}
+
+.alerts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.alert-card {
+  background: #fef5f5;
+  border-left: 4px solid #e74c3c;
+  padding: 16px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.alert-card.critical {
+  animation: slideIn 0.4s ease-out;
+}
+
+.alert-content h4 {
+  margin: 0 0 8px 0;
+  color: #c0392b;
+  font-size: 16px;
+}
+
+.alert-message {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.alert-metrics {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #666;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.metric.confidence {
+  background: #ffe5e5;
+  color: #c0392b;
+  font-weight: 600;
+}
+
+/* Traffic Section */
+.traffic-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.traffic-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px 0;
+  color: #2c3e50;
+  font-size: 18px;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+  padding: 32px 16px;
+  font-style: italic;
+}
+
+.traffic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.traffic-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.traffic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+.gate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.gate-header h4 {
+  margin: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.traffic-badge {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.traffic-details {
+  display: grid;
+  gap: 8px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.stat .label {
+  opacity: 0.9;
+}
+
+.stat .value {
+  font-weight: 700;
+}
+
+/* Predictions Section */
+.predictions-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.predictions-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px 0;
+  color: #2c3e50;
+  font-size: 18px;
+}
+
+.predictions-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.prediction-card {
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #95a5a6;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.prediction-card.warning {
+  border-left-color: #f39c12;
+  background: #fffbf0;
+}
+
+.prediction-card.critical {
+  border-left-color: #e74c3c;
+  background: #fef5f5;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.15);
+}
+
+.prediction-card.normal {
+  border-left-color: #27ae60;
+  background: #f0fdf4;
+}
+
+.prediction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.prediction-header h4 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.alert-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.alert-badge.normal {
+  background: #d5f4e6;
+  color: #27ae60;
+}
+
+.alert-badge.warning {
+  background: #fdebd0;
+  color: #e67e22;
+}
+
+.alert-badge.critical {
+  background: #fadbd8;
+  color: #c0392b;
+  animation: pulse 1s infinite;
+}
+
+.flow-bar {
+  width: 100%;
+  height: 6px;
+  background: #ecf0f1;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.flow-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.prediction-card.warning .flow-fill {
+  background: linear-gradient(90deg, #f39c12 0%, #e67e22 100%);
+}
+
+.prediction-card.critical .flow-fill {
+  background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+  animation: flow 1s infinite;
+}
+
+.crowd-estimate {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+.prediction-stats {
+  background: white;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  color: #666;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.recommendation {
+  font-size: 13px;
+  color: #555;
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid #667eea;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.prediction-card.warning .recommendation {
+  border-left-color: #f39c12;
+}
+
+.prediction-card.critical .recommendation {
+  border-left-color: #e74c3c;
+  font-weight: 600;
+}
+
+/* Instructions Panel */
+.instructions-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  border-left: 4px solid #3498db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.instructions-panel h3 {
+  margin-top: 0;
+  color: #2980b9;
+  font-size: 18px;
+}
+
+.instructions-panel ol {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+.instructions-panel li {
+  margin: 12px 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.instructions-panel strong {
+  color: #2c3e50;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes flow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .crowd-dashboard {
+    padding: 16px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .dashboard-header h2 {
+    font-size: 22px;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .predictions-list {
+    grid-template-columns: 1fr;
+  }
+
+  .traffic-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .alerts-list {
+    grid-template-columns: 1fr;
+  }
+}
