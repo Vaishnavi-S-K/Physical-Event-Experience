@@ -23,10 +23,9 @@ COPY backend ./backend
 # Copy built frontend assets to the directory serviced by the backend
 COPY --from=frontend-builder /app/dist ./public
 
-# Expose the port (Cloud Run sets PORT env var)
-EXPOSE 4000
+# Expose the port (Cloud Run sets PORT env var, default 8080)
+EXPOSE 8080
 
-ENV PORT=4000
 ENV NODE_ENV=production
 
 # Start the server
